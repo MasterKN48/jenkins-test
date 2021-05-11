@@ -1,3 +1,5 @@
+def skipRemainingStages = false
+
 pipeline {
     agent any
     
@@ -15,6 +17,10 @@ pipeline {
                 sh 'node -v'
                 sh "npm install"
                 sh "npm run test"
+
+                script {
+                    error "This pipeline stops here!"
+                }
             }
         }
 
@@ -33,10 +39,9 @@ pipeline {
                 sh 'node -v'
                 sh "npm install"
                 sh "npm run start"
-                
-                script {
-                    currentBuild.getRawBuild().getExecutor().interrupt(Result.SUCCESS)
-                    sleep(1)
+                sh "killall node"
+                script{
+                    sh 'exit 1'
                 }
             }
         }
