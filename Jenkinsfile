@@ -39,7 +39,7 @@ pipeline {
                 sh "npm install"
                 sh "npm start & sleep 1"
                 script{
-                    sh 'exit 1'
+                    sh 'exit 0'
                 }
             }
         }
