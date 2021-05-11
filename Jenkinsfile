@@ -10,6 +10,7 @@ pipeline {
             }
 
             steps {
+                echo "BUILD STARTED DEVELOPMENT"
                 echo "NODE_ENV = ${env.NODE_ENV}"
                 echo "PORT = ${env.PORT}"
 
@@ -26,6 +27,7 @@ pipeline {
                 PORT = "8001"
             }
             steps {
+                echo "BUILD STARTED TEST"
                 echo "NODE_ENV = ${env.NODE_ENV}"
                 echo "PORT = ${env.PORT}"
 
