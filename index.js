@@ -8,6 +8,7 @@ app.get("*", (req, res) => {
   return res.json({ msg: "OK" });
 });
 
-app.listen(process.env.PORT || port, () => {
+const port = process.env.PORT;
+app.listen(port, () => {
   console.log(`Server started on ${port}`);
 });
