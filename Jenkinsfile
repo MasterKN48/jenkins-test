@@ -35,8 +35,6 @@ pipeline {
                 echo "#### BUILD STARTED DEVELOPMENT ####"
                 echo "NODE_ENV = ${env.NODE_ENV}"
                 echo "PORT = ${env.PORT}"
-                sh 'node -v'
-                sh "npm install"
                 sh "npm start & sleep 1"
                 script{
                     sh 'exit 0'
