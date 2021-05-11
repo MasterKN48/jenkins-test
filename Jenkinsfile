@@ -18,9 +18,9 @@ pipeline {
                 sh "npm install"
                 sh "npm run test"
 
-                script {
-                    error "This pipeline stops here!"
-                }
+                // script {
+                //     error "This pipeline stops here!"
+                // }
             }
         }
 
