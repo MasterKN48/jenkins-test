@@ -10,12 +10,11 @@ pipeline {
             }
 
             steps {
-                echo "BUILD STARTED DEVELOPMENT"
+                echo "#### BUILD STARTED DEVELOPMENT ####"
                 echo "NODE_ENV = ${env.NODE_ENV}"
                 echo "PORT = ${env.PORT}"
-
-                sh 'printenv'
-                sh 'nvm use 10.16'
+        
+                sh 'node -v'
                 sh "npm install"
                 sh "npm run dev"
             }
@@ -27,12 +26,11 @@ pipeline {
                 PORT = "8001"
             }
             steps {
-                echo "BUILD STARTED TEST"
+                echo "#### BUILD STARTED TEST ####"
                 echo "NODE_ENV = ${env.NODE_ENV}"
                 echo "PORT = ${env.PORT}"
 
-                sh 'printenv'
-                sh 'nvm use 10.16'
+                sh 'node -v'
                 sh "npm install"
                 sh "npm run test"
             }
